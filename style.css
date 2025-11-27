@@ -1,0 +1,122 @@
+body {
+    font-family: Arial;
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2VhdGhlciUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&w=1000&q=80');
+      background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 50px;
+    padding: 25px 30px;
+    width: 350px;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+}
+.title {
+    display: flex;
+    align-items: center;  /* vertically center */
+    justify-content: center; /* horizontally center */
+    gap: 5px;            /* space between image and text */
+}
+
+.title .logo {
+    width: 50px;   /* adjust size */
+    height: 50px;  /* optional */
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+}
+
+input {
+    flex: 5;
+    width:34%;
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid white;
+    font-size: 18px;
+    font-family: roboto;
+}
+
+button {
+    width: 70px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    /* background: royalblue; */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+      font-family: roboto;
+    cursor: pointer;
+    backdrop-filter: blur(5px); /*glass effect*/
+    transition: background 0.3s;
+}
+
+
+button:hover {
+    background: #9bd9ec;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: white;
+}
+.forecast {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scroll */
+    gap: 8px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+.forecast::-webkit-scrollbar {
+    height: 6px;
+}
+
+.forecast::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.3);
+    border-radius: 3px;
+}
+
+.forecast .day {
+    flex: 0 0 auto; /* Prevent shrinking, keep fixed width */
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20%;
+    padding: 8px;
+    width: 80px;
+    text-align: center;
+    font-size: 10px;
+    transition: transform 0.2s;
+}
+
+.forecast .day img {
+    width: 40px;       /* Smaller icons */
+}
+
+.forecast .day:hover {
+    transform: scale(1.06);
+}
+.forecast {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  /* Firefox */
+}
+
+.forecast::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera*/ 
+}

@@ -53,42 +53,22 @@ async function getWeatherByCoords(lat, lon) {
     const iconCode = currentData.weather[0].icon;
     const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
-        // earlier you computed:
-    let weatherMain = currentData.weather[0].main.toLowerCase();
-
-    // REPLACE the whole if-else block with:
-    updateBackground(weatherMain);
-
+   let weatherMain = currentData.weather[0].main.toLowerCase();
 
     // Dynamic background
-   // add near the top of script.js
-function updateBackground(weatherMain) {
-    // choose image URL
-    let imgUrl = "";
-
     if (weatherMain.includes("cloud")) {
-        imgUrl = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80";
+        body.style.background = "linear-gradient(to right, #bdc3c7, #2c3e50)";
     } else if (weatherMain.includes("rain") || weatherMain.includes("drizzle")) {
-        imgUrl = "https://images.unsplash.com/photo-1527766833261-b09c3163a791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80";
+        body.style.background = "linear-gradient(to top, #4e54c8, #8f94fb)";
     } else if (weatherMain.includes("clear")) {
-        imgUrl = "https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80";
+        body.style.background = "linear-gradient(to top, #f6d365, #fda085)";
     } else if (weatherMain.includes("snow")) {
-        imgUrl = "https://images.unsplash.com/photo-1608889174673-1f5f6e6b1b2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80";
+        body.style.background = "linear-gradient(to top, #e0eafc, #cfdef3)";
     } else if (weatherMain.includes("mist") || weatherMain.includes("fog")) {
-        imgUrl = "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80";
+        body.style.background = "linear-gradient(to top, #757f9a, #d7dde8)";
     } else {
-        imgUrl = "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80";
+        body.style.background = "linear-gradient(to top, #4facfe, #00f2fe)";
     }
-
-    // apply as separate properties so the browser accepts them
-    body.style.transition = "background-image 0.8s ease, background-color 0.8s ease";
-    body.style.backgroundImage = `url("${imgUrl}")`;
-    body.style.backgroundRepeat = "no-repeat";
-    body.style.backgroundPosition = "center center";
-    body.style.backgroundSize = "cover";
-    // optional overlay color for contrast (uncomment if needed)
-    // body.style.backgroundColor = "rgba(0,0,0,0.25)";
-}
 
 
     // Display current weather
